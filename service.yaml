@@ -13,5 +13,3 @@ spec:
   selector:
     app: sslwebsite
   type: LoadBalancer
-  externalIPs: 
-    - 192.168.0.5
