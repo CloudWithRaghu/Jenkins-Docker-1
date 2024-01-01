@@ -10,5 +10,4 @@ node {
                  kubectl patch svc service-website -n default -p '{"spec": {"type": "LoadBalancer", "externalIPs":["192.168.0.5"]}}'
          '''
     }
-  }
-}
+ }
