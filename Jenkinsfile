@@ -4,12 +4,7 @@ pipeline {
     dockerImage = ""
   }
   agent any
-  stages {
-    stage('SCM') {
-      steps {
-        git 'https://github.com/CloudWithRaghu/Jenkins-Docker-SSL-Website.git'
-      }
-    }
+  stages {    
     stage('Build image') {
       steps{
         script {
