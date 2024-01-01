@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-sslwebsite          
+  labels:
+    app: sslwebsite
+spec:
+  replicas: 2     
+  selector:
+    matchLabels:
+      app: sslwebsite
+  template:
+    metadata:
+      labels:
+        app: sslwebsite 
+    spec:
+      containers:
+      - name: sslwebsite 
+        image: cloudwithraghu/sslwebsite:latest 
+        ports:
+        - containerPort: 80
+        - containerPort: 443
