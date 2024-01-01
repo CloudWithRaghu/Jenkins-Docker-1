@@ -24,6 +24,7 @@ RUN echo "ErrorLog ${APACHE_LOG_DIR}/error.log" >> /etc/apache2/sites-available/
 RUN echo "CustomLog ${APACHE_LOG_DIR}/access.log combined" >> /etc/apache2/sites-available/www.raghu.wiki.conf
 RUN echo "</VirtualHost>" >> /etc/apache2/sites-available/www.raghu.wiki.conf
 RUN a2ensite www.raghu.wiki.conf
+RUN service apache2 start
 RUN service apache2 reload
 RUN a2dissite 000-default.conf
 RUN service apache2 reload
