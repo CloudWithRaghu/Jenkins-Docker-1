@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: sslwebsite 
-        image: cloudwithraghu/sslwebsite:latest 
+        image: cloudwithraghu/www.raghu.wiki.master:latest 
         ports:
         - containerPort: 80
         - containerPort: 443
