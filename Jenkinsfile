@@ -1,12 +1,8 @@
-pipeline {
-  agent any
-  stages {    
-    stage('Deploying to Kubernetes') {
-      steps {
-        script {
-          kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
-        }
-      }
+node {
+  stage('Apply Kubernetes files') {
+    withKubeConfig([credentialsId: 'kube-serviceAccount', serverUrl: 'https://192.168.0.4:6443']) {
+      sh 'kubectl apply -f deployment.yaml'
+      sh 'kubectl apply -f service.yaml'
     }
   }
 }
