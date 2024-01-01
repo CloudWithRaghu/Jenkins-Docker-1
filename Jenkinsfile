@@ -1,29 +1,6 @@
 pipeline {
-  environment {
-    dockerimagename = "cloudwithraghu/sslwebsite"
-    dockerImage = ""
-  }
   agent any
   stages {    
-    stage('Build image') {
-      steps{
-        script {
-          dockerImage = docker.build dockerimagename
-        }
-      }
-    }
-    stage('Push Image to Docker Hub') {
-      environment {
-          registryCredential = 'githubcredentials'
-           }
-      steps{
-        script {
-          docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
-            dockerImage.push("latest")
-          }
-        }
-      }
-    }
     stage('Deploying to Kubernetes') {
       steps {
         script {
