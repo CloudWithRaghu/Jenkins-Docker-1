@@ -1,7 +1,7 @@
 node {
     
     stage('Clone Github repository') {
-        git branch: 'main' credentialsId: 'github-creds', url: 'https://github.com/CloudWithRaghu/jenkins-kubernetes-ssl-website.git'
+        git branch: 'main', credentialsId: 'github-creds', url: 'https://github.com/CloudWithRaghu/jenkins-kubernetes-ssl-website.git'
     }
     
     stage('Apply Kubernetes files') {
