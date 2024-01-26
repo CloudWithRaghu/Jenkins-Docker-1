@@ -9,7 +9,7 @@ node {
       sh 'kubectl apply -f deployment.yaml'
       sh 'kubectl apply -f service.yaml'
        sh '''#!/bin/bash
-                 kubectl patch svc service-website -n default -p '{"spec": {"type": "LoadBalancer", "externalIPs":["10.0.0.4"]}}'
+                 kubectl patch svc service-website -n default -p '{"spec": {"type": "LoadBalancer", "externalIPs":["10.0.0.5"]}}'
          '''
      }
   }
